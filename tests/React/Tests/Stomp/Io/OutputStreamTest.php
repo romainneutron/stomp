@@ -11,12 +11,15 @@ class OutputStreamTest extends TestCase
 {
     public function setUp()
     {
+        $phpunit = $this;
         $this->loop = $this->getMock('React\EventLoop\LoopInterface');
         $this->loop
             ->expects($this->any())
             ->method('addTimer')
-            ->will($this->returnCallback(function ($seconds, $callback) {
+            ->will($this->returnCallback(function ($seconds, $callback) use ($phpunit) {
                 call_user_func($callback);
+
+                return $phpunit->getTimerMock();
             }));
     }
 

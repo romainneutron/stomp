@@ -6,12 +6,17 @@
     "require": {
         "php": ">=5.3.2",
         "evenement/evenement": "1.0.*",
-        "react/socket": "0.2.*",
-        "react/promise": "~1.0"
+        "react/react": "dev-libuv-filesystem"
     },
     "autoload": {
         "psr-0": { "React\\Stomp": "src" }
     },
+    "repositories": [
+    {
+        "type": "git",
+        "url":  "https://github.com/csaoh/react.git"
+    }
+    ],
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"

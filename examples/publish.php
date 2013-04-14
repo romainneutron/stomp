@@ -4,7 +4,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 $conf = require __DIR__ . '/config/probe.php';
 
-$loop = React\EventLoop\Factory::create();
+$loop = new React\EventLoop\LibUvLoop();
 $factory = new React\Stomp\Factory($loop);
 $client = $factory->createClient($conf);
 

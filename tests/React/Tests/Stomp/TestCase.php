@@ -47,4 +47,9 @@ class TestCase extends \PHPUnit_Framework_TestCase
     {
         return $this->getMock('React\Tests\Stomp\Stub\CallableStub');
     }
+
+    protected function getTimerMock()
+    {
+        return $this->getMock('React\EventLoop\Timer\TimerInterface');
+    }
 }

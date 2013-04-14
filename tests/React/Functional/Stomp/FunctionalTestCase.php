@@ -2,14 +2,14 @@
 
 namespace React\Functional\Stomp;
 
-use React\EventLoop\Factory as LoopFactory;
 use React\Stomp\Factory;
+use React\EventLoop\LibUvLoop;
 
 abstract class FunctionalTestCase extends \PHPUnit_Framework_TestCase
 {
     protected function getEventLoop()
     {
-        return LoopFactory::create();
+        return new LibUvLoop();
     }
 
     protected function getClient($loop, array $options = array())
